@@ -98,19 +98,21 @@ def scan(folder: Path) -> None:
 
 # Старт программы если запускаем отсюда
 if __name__ == "__main__":
-    # Определяем из параметров папку для сканирования
-    folder_to_scan = sys.argv[1]
-    # Информируем пользователя
-    print(f'Start in folder {folder_to_scan}')
-    # Запускаем сканирование (никаких действий по изменению не происходит)
-    scan(Path(folder_to_scan))
-    # Информируем пользователя о результатах
-    print(f'Result:')
-    print(f'   Images: {IMAGES}')
-    print(f'   Video: {VIDEO}')
-    print(f'   Documents: {DOCUMENTS}')
-    print(f'   Audio: {AUDIO}')
-    print(f'   Archives: {ARCHIVES}')
-    print(f'   Other: {MY_OTHER}')
-    print(f'   Known ​file extensions: {EXTENSION}')
-    print(f'   Unknown files extensions: {UNKNOWN}')
+    # Если есть параметр с наименованием папки, которую надо обработать, то ...
+    if len(sys.argv) > 1:
+        # Определяем из параметров папку для сканирования
+        folder_to_scan = sys.argv[1]
+        # Информируем пользователя
+        print(f'Start in folder {folder_to_scan}')
+        # Запускаем сканирование (никаких действий по изменению не происходит)
+        scan(Path(folder_to_scan))
+        # Информируем пользователя о результатах
+        print(f'Result:')
+        print(f'   Images: {IMAGES}')
+        print(f'   Video: {VIDEO}')
+        print(f'   Documents: {DOCUMENTS}')
+        print(f'   Audio: {AUDIO}')
+        print(f'   Archives: {ARCHIVES}')
+        print(f'   Other: {MY_OTHER}')
+        print(f'   Known ​file extensions: {EXTENSION}')
+        print(f'   Unknown files extensions: {UNKNOWN}')
